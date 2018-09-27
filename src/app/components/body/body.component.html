@@ -1,0 +1,42 @@
+<div class="row">
+
+    <div class="col">
+        <h1>*ngif</h1>
+        <hr>
+
+        <!-- Code for card Container-->
+        <!-- "mostrar" es una propiedad definida en el archivo TS-->
+
+
+        <div *ngIf="mostrar" class="card text-white bg-info mb-3" style="width: 100%">
+
+            <!--Optional Cardheader-->
+            <!--Card header: <div class="card-header">Header</div> -->
+
+            <div class="card-body">
+                <h5 class="card-title">{{frase.autor}}</h5>
+                <p class="card-text">{{frase.mensaje}}</p>
+            </div>
+        </div>
+
+        <!--click activa el manejador de clics y se pone adentro codigo js o se llama metodos del archivo ts -->
+        <button (click)="mostrar =!mostrar  " class="btn-outline-dark btn-block">
+      Mostrar/Ocultar
+    </button>
+
+    </div>
+
+    <div class="col">
+        <h1>*ngfor</h1>
+        <hr>
+
+        <!--  ngFor sirve para recorrer un arreglo y mostrarlo en una lista o algun componente, es basicamente un clasico foreach donde "let personaje of es la como si fuera foreach var in var" -->
+        <ul class="list-group">
+            <li *ngFor="let personaje of personajes; let i = index" class="list-group-item"> {{i + 1}}. {{personaje}}
+            </li>
+        </ul>
+
+    </div>
+
+
+</div>
